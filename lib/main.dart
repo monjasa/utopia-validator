@@ -4,12 +4,11 @@ import 'package:utopia_validator/bloc/auth_bloc.dart';
 import 'package:utopia_validator/presentation/home_page.dart';
 import 'package:utopia_validator/repository/auth_repository.dart';
 
-void main() {
-  runApp(const MyApp());
+  runApp(const UtopiaValidatorApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class UtopiaValidatorApp extends StatelessWidget {
+  const UtopiaValidatorApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +27,9 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Utopia Validator',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.blueGrey,
           ),
           home: const HomePage(),
         ),

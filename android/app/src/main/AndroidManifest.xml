@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.utopia_validator">
    <application
-        android:label="utopia_validator"
+        android:label="Utopia Validator"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
