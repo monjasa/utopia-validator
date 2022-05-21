@@ -1,25 +1,23 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:utopia_validator/bloc/auth_bloc.dart';
+import 'package:utopia_validator/bloc/auth/auth_bloc.dart';
+import 'package:utopia_validator/bloc/home/home_bloc.dart';
 import 'package:utopia_validator/presentation/home_page.dart';
 
-class AuthPage extends StatefulWidget {
+class AuthPage extends StatelessWidget {
   const AuthPage({Key? key}) : super(key: key);
 
   @override
-  State<AuthPage> createState() => _AuthPageState();
-}
-
-class _AuthPageState extends State<AuthPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sign In'),
+        centerTitle: true,
+      ),
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
-          log("listener: ${state.toString()}");
-          if (state is Authenticated) {
+          if (state is UserAuthenticated) {
+            BlocProvider.of<HomeBloc>(context).add(HomeLoadEvent());
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
                 builder: (context) => const HomePage(),
@@ -29,15 +27,9 @@ class _AuthPageState extends State<AuthPage> {
         },
         child: BlocBuilder<AuthBloc, AuthState>(
           builder: (context, state) {
-            log("builder: ${state.toString()}");
-            if (state is Unauthenticated) {
+            if (state is UserUnauthenticated) {
               return Center(
-                child: ElevatedButton(
-                  child: const Text('Sign in with Google'),
-                  onPressed: () {
-                    _signInWithGoogle(context);
-                  },
-                ),
+                child: _buildSignInButton(context),
               );
             }
             return Container();
@@ -46,10 +38,26 @@ class _AuthPageState extends State<AuthPage> {
       ),
     );
   }
-}
 
-void _signInWithGoogle(BuildContext context) {
-  BlocProvider.of<AuthBloc>(context).add(
-    SignInRequestEvent(),
-  );
+  void _signInWithGoogle(BuildContext context) {
+    BlocProvider.of<AuthBloc>(context).add(SignInRequestEvent());
+  }
+
+  Widget _buildSignInButton(BuildContext context) {
+    return ElevatedButton.icon(
+      icon: Image.asset(
+        'assets/images/google.png',
+        width: 32,
+        height: 32,
+      ),
+      label: const Text(
+        'Sign in with Google',
+        style: TextStyle(color: Colors.black54),
+      ),
+      style: ElevatedButton.styleFrom(primary: Colors.white),
+      onPressed: () {
+        _signInWithGoogle(context);
+      },
+    );
+  }
 }
