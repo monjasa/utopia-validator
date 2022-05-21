@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "348711351609",
+    "project_id": "utopia-theatre",
+    "storage_bucket": "utopia-theatre.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348711351609:android:81365e8c8a6a5f39a164e8",
+        "android_client_info": {
+          "package_name": "org.monjasa.utopiavalidator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348711351609-uhk46utqq1veind9stoek7fqmgeqcvf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4rJ7B5k8CAJ30EuT19nxxBpDUfJkJV_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348711351609-uhk46utqq1veind9stoek7fqmgeqcvf2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "348711351609-ciuhlsc97ims3q97lt6jp6noeidee4mo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firebaseTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
