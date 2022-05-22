@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:utopia_validator/bloc/auth/auth_bloc.dart';
 import 'package:utopia_validator/bloc/home/home_bloc.dart';
+import 'package:utopia_validator/bloc/scanner/scanner_bloc.dart';
 import 'package:utopia_validator/presentation/auth_page.dart';
 import 'package:utopia_validator/repository/auth_repository.dart';
 import 'package:utopia_validator/repository/home_repository.dart';
+import 'package:utopia_validator/repository/scanner_repository.dart';
 import 'package:utopia_validator/service/service_locator.dart';
 
 import 'firebase_options.dart';
@@ -29,6 +31,9 @@ class UtopiaValidatorApp extends StatelessWidget {
         RepositoryProvider<HomeRepository>(
           create: (context) => HomeRepository(),
         ),
+        RepositoryProvider<ScannerRepository>(
+          create: (context) => ScannerRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -40,6 +45,11 @@ class UtopiaValidatorApp extends StatelessWidget {
           BlocProvider<HomeBloc>(
             create: (context) => HomeBloc(
               RepositoryProvider.of<HomeRepository>(context),
+            ),
+          ),
+          BlocProvider<ScannerBloc>(
+            create: (context) => ScannerBloc(
+              RepositoryProvider.of<ScannerRepository>(context),
             ),
           ),
         ],

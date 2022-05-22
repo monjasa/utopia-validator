@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '348711351609',
     projectId: 'utopia-theatre',
     storageBucket: 'utopia-theatre.appspot.com',
-    androidClientId: '348711351609-ii291pkufidcpljq2ajur7rvaqorfnot.apps.googleusercontent.com',
+    androidClientId: '348711351609-9jirodifvb9m4kbp97ah2gc46hibqr1c.apps.googleusercontent.com',
     iosClientId: '348711351609-utlqpki0i8e3qqm72f0gc1j43s10fqga.apps.googleusercontent.com',
     iosBundleId: 'org.monjasa.utopiavalidator',
   );

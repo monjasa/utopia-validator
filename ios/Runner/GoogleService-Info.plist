@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>348711351609-utlqpki0i8e3qqm72f0gc1j43s10fqga.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.348711351609-utlqpki0i8e3qqm72f0gc1j43s10fqga</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>348711351609-9jirodifvb9m4kbp97ah2gc46hibqr1c.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDVguJyemxbAFD5KgY5Dh4BdSR-nDYt3Bg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>348711351609</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.monjasa.utopiavalidator</string>
+	<key>PROJECT_ID</key>
+	<string>utopia-theatre</string>
+	<key>STORAGE_BUCKET</key>
+	<string>utopia-theatre.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:348711351609:ios:6b219f9c00b478e7a164e8</string>
+</dict>
+</plist>

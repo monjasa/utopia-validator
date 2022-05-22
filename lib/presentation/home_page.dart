@@ -1,10 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:utopia_validator/bloc/auth/auth_bloc.dart';
 import 'package:utopia_validator/bloc/home/home_bloc.dart';
+import 'package:utopia_validator/bloc/scanner/scanner_bloc.dart';
 import 'package:utopia_validator/presentation/auth_page.dart';
+import 'package:utopia_validator/presentation/scanner_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Scanner',
-        onPressed: () => log('pressed scanner'),
+        onPressed: () => _loadScanner(context),
         child: const Icon(Icons.qr_code_scanner),
       ),
     );
@@ -53,6 +53,12 @@ class HomePage extends StatelessWidget {
       MaterialPageRoute(builder: (context) => const AuthPage()),
       (route) => false,
     );
+  }
+
+  void _loadScanner(BuildContext context) {
+    BlocProvider.of<ScannerBloc>(context).add(ScannerLoadEvent());
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const ScannerPage()));
   }
 
   Widget _buildProfileImage(String profileImageUrl) {

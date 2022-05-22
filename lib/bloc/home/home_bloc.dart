@@ -13,10 +13,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final HomeRepository _homeRepository;
 
   HomeBloc(this._homeRepository) : super(HomeInitial()) {
-    on<HomeLoadEvent>(_loadUser);
+    on<HomeLoadEvent>(_loadBloc);
   }
 
-  FutureOr<void> _loadUser(HomeEvent event, Emitter<HomeState> emit) {
+  FutureOr<void> _loadBloc(HomeEvent event, Emitter<HomeState> emit) {
     final user = _homeRepository.getCurrentUser();
     emit(HomeLoaded(user: user));
   }

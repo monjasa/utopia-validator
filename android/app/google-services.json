@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "348711351609-9jirodifvb9m4kbp97ah2gc46hibqr1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.monjasa.utopiavalidator",
+            "certificate_hash": "eef2c56e6d2edbb2ce8aca19d60ed49b528db822"
+          }
+        },
+        {
           "client_id": "348711351609-uhk46utqq1veind9stoek7fqmgeqcvf2.apps.googleusercontent.com",
           "client_type": 3
         }
