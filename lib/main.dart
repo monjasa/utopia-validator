@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:utopia_validator/bloc/auth/auth_bloc.dart';
 import 'package:utopia_validator/bloc/home/home_bloc.dart';
@@ -54,9 +55,20 @@ class UtopiaValidatorApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
-          title: 'Utopia Validator',
+          title: 'Валідатор Утопія',
           theme: ThemeData(
-            primarySwatch: Colors.blueGrey,
+            colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.orange,
+            ).copyWith(
+              onPrimary: Colors.white,
+              onSecondary: Colors.white,
+            ),
+            appBarTheme: const AppBarTheme(
+              systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarIconBrightness: Brightness.light,
+                statusBarBrightness: Brightness.light,
+              ),
+            ),
           ),
           home: const AuthPage(),
         ),

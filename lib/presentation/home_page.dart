@@ -13,10 +13,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Валідатор'),
         actions: [
           IconButton(
-            tooltip: 'Log Out',
+            tooltip: 'Вийти',
             icon: const Icon(Icons.exit_to_app),
             onPressed: () => _signOut(context),
           ),
@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           if (state is HomeLoaded) {
             final profileImageUrl = state.user.photoURL ?? '';
-            final profileName = state.user.displayName ?? 'User';
+            final profileName = state.user.displayName ?? 'Користувач';
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

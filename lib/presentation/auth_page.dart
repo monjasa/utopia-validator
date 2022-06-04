@@ -11,7 +11,7 @@ class AuthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: const Text('Вхід до системи'),
         centerTitle: true,
       ),
       body: BlocListener<AuthBloc, AuthState>(
@@ -29,13 +29,21 @@ class AuthPage extends StatelessWidget {
           builder: (context, state) {
             if (state is UserUnauthenticated) {
               return Center(
-                child: _buildSignInButton(context),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildBrandLogoImage(context),
+                    const SizedBox(height: 40),
+                    _buildSignInButton(context),
+                  ],
+                ),
               );
             }
             return Container();
           },
         ),
       ),
+      backgroundColor: const Color(0xff131313),
     );
   }
 
@@ -43,16 +51,22 @@ class AuthPage extends StatelessWidget {
     BlocProvider.of<AuthBloc>(context).add(SignInRequestEvent());
   }
 
+  Widget _buildBrandLogoImage(BuildContext context) {
+    return Image.asset(
+      'assets/images/brand-logo.png',
+      width: 220,
+    );
+  }
+
   Widget _buildSignInButton(BuildContext context) {
     return ElevatedButton.icon(
       icon: Image.asset(
         'assets/images/google.png',
         width: 32,
-        height: 32,
       ),
       label: const Text(
-        'Sign in with Google',
-        style: TextStyle(color: Colors.black54),
+        'Увійти за допомогою Google',
+        style: TextStyle(color: Color(0xff343a40)),
       ),
       style: ElevatedButton.styleFrom(primary: Colors.white),
       onPressed: () {

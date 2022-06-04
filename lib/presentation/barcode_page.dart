@@ -10,7 +10,7 @@ class BarcodePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Barcode'),
+        title: const Text('Цифровий квиток'),
       ),
       body: BlocBuilder<ScannerBloc, ScannerState>(
         builder: (context, state) {
@@ -19,7 +19,14 @@ class BarcodePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Text(
+                    'Ідентифікатор цифрового квитка',
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  const SizedBox(height: 20),
                   Text(state.barcodeValue),
+                  const SizedBox(height: 40),
+                  _buildValidationButton(context)
                 ],
               ),
             );
@@ -28,7 +35,7 @@ class BarcodePage extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        tooltip: 'Scanner',
+        tooltip: 'Сканер',
         onPressed: () => _loadScanner(context),
         child: const Icon(Icons.qr_code_scanner),
       ),
@@ -41,6 +48,13 @@ class BarcodePage extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => const ScannerPage(),
       ),
+    );
+  }
+
+  Widget _buildValidationButton(BuildContext context) {
+    return ElevatedButton(
+      child: const Text('Валідувати квиток'),
+      onPressed: () => {},
     );
   }
 }

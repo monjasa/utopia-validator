@@ -18,7 +18,7 @@ class _ScannerPageState extends State<ScannerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Scanner'),
+        title: const Text('Сканер'),
         actions: [
           _buildToggleTorchIconButton(),
           _buildSwitchCameraIconButton(),
